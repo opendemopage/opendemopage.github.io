@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Reconstructing High Quality Speech from Silent Videos">
+  <meta name="keywords" content="Let There Be Sound">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerfies: Deformable Neural Radiance Fields</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- author information -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Let There Be Sound: Reconstructing High Quality Speech from Silent Videos</h1>
+          <div class="is-size-3 publication-authors">
+            <span class="author-block">
+              anonymous
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /author information -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The goal of this work is to generate high quality speech from lip motions alone, i.e., lip-to-speech (LTS). 
+            One main challenge of LTS systems is the intricate one-to-many mapping caused by 1) the existence of homophenes 
+            and 2) multiple speech variations, resulting in a mispronounced and over-smoothed speech.  In this paper, we propose 
+            a novel LTS system that significantly improves the generation quality by alleviating the one-to-many mapping problem 
+            from multiple perspectives.  Specifically, we incorporate 1) self-supervised speech representations to disambiguate 
+            homophenes, and 2) acoustic variance information to model diverse speech styles.  Additionally, to better solve the 
+            aforementioned problem, we employ a flow based post-net which captures and refines the details of the generated speech. 
+            We conduct extensive experiments on two datasets, and the results demonstrate that our method achieves the generation 
+            quality close to human-level, outperforming existing methods in terms of speech naturalness and intelligibility. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Samples for GRID Dataset</h2>
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 1</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/grid_s7_prbi8n.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="transcription"><b><i>Transcription</i>: "Place Red by I Eight Now."</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 2</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/grid_s27_bbiv4n.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="transcription"><b><i>Transcription</i>: "Bin Blue in V Four Now."</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 3</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/grid_s29_bgay5s.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="transcription"><b><i>Transcription</i>: "Bin Green at Y Five Soon."</b></p>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+    <!-- Paper video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Samples of Lip2Wav Dataset</h2>
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 1</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/lip2wav_chem_144_0.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “So we understand light as behaving like a wave 
+                like an ocean with a wavelength and a speed but also like a particle”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 2</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/lip2wav_chem_157_0.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “That is plotted here in the dotted yellow line. 
+                Then I'm gonna dilute by a factor of 10”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 3</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/lip2wav_chess_13_65_0.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “Captures an E6 and it was in this position now 
+                that Viswanathan Anand resigned the game and yet another victory for 
+                Magnus Carlsen”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <!-- /Paper video -->
+    <!-- Paper video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study in Lip2Wav Dataset</h2>
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 1</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/ablation_chem_106_20.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="transcription">
+            <b><i>Transcription</i>: “That will attract into the charged surface,
+            so let's look at that. what I have here”</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 2</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/ablation_chess_16_27_1.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “Defending, and now rook to D8 preparing 
+                to counter white rooks along the D file now bishop to G6”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 3</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="90%">
+            <source src="./static/videos/ablation_chess_14_51_1.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “Still it's a rook against the bishop and it will be 
+                very interesting to see how Mamedyarov does it King E1 with C5”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <!-- /Paper video -->
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The source code of the website is based on
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
