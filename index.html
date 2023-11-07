@@ -26,8 +26,27 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body>
 
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item navbar-item-large" href="#Abstract">Abstract</a>
+      <a class="navbar-item navbar-item-large" href="#GRID">GRID</a>
+      <a class="navbar-item navbar-item-large" href="#Lip2Wav">Lip2Wav</a>
+      <a class="navbar-item navbar-item-large" href="#Ablation">Ablation</a>
+      <a class="navbar-item navbar-item-large" href="#Unseen_speaker">Unseen Speakers</a>
+    </div>
+  </div>
+</nav>
+
+<body>
 <!-- author information -->
 <section class="hero">
   <div class="hero-body">
@@ -48,7 +67,7 @@
 <!-- /author information -->
 
 
-<section class="section">
+<section class="section" id="Abstract">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -75,6 +94,10 @@
     </div>
     <!--/ Abstract. -->
 
+  </div>
+</section>
+<section class="section" id="GRID">
+  <div class="container is-max-desktop">
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -114,6 +137,10 @@
       </div>
     </div>
     <!--/ Paper video. -->
+  </div>
+</section>
+<section class="section" id="Lip2Wav">
+  <div class="container is-max-desktop">
     <!-- Paper video -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -163,6 +190,10 @@
       </div>
     </div>
     <!-- /Paper video -->
+  </div>
+</section>
+<section class="section" id="Ablation">
+  <div class="container is-max-desktop">
     <!-- Paper video -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -213,7 +244,60 @@
     <!-- /Paper video -->
   </div>
 </section>
-
+<section class="section" id="Unseen_speaker">
+  <div class="container is-max-desktop">
+    <!-- Paper video -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Unseen-speaker Experiment on GRID Dataset</h2>
+        <p>
+          In this experiment, we randomly select 15, 8, and 10 speakers for train, 
+          validation, and test.
+        </p>
+        <br>
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 1</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/unseen_s22_bbbyza.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="transcription">
+            <b><i>Transcription</i>: “Bin Blue by Y Zero Again”</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 2</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/unseen_s27_bbav9s.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “Bin Blue at V Nine Soon”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <p class="transcription"><b>Sample 3</b></p>
+          <video id="ablation_proposed_1" controls preload playsinline width="70%">
+            <source src="./static/videos/unseen_s28_pbbm8a.mp4"
+                    type="video/mp4">
+          </video>
+            <p class="transcription">
+              <b><i>Transcription</i>: “Place Blue by M Eight Again”</b>
+            </p>
+        </div>
+      </div>
+    </div>
+    <!-- /Paper video -->
+  </div>
+</section>
 
 
 <footer class="footer">
