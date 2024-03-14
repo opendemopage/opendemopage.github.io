@@ -74,8 +74,6 @@
                     <div class="content has-text-justified">
                         <p>
                             The goal of this paper is to construct a fast and effective voice conversion framework that
-                            converts the speech of a
-                            The goal of this paper is to construct a fast and effective voice conversion framework that
                             converts the speech of a source speaker to sound like a target speaker while preserving
                             linguistic content.
                             A key challenge is to extract disentangled representations of content from the source speech
@@ -96,7 +94,125 @@
 
         </div>
     </section>
-    <section class="section" id="GRID">
+    <section>
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <h2 class="title is-3">Conversion Samples for Seen Speakers</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>Target</th>
+                        <th>kNN-VC (single)</th>
+                        <th>kNN-VC (30s)</th>
+                        <th>DDDM-VC (6)</th>
+                        <th>DDDM-VC (30)</th>
+                        <th><b>AdaVC</b></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_src.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_ref.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_knn_single.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_knn_30.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_dddm_6.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_dddm_30.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0159_proposed.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <tr><td>.</td></tr>
+                    <tr>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_src.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_ref.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_knn_single.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_knn_30.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_dddm_6.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_dddm_30.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="./static/audios/seen/0344_proposed.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Element 2</td>
+                        <td>This is a description of the second element.</td>
+                        <td>In Progress</td>
+                        <td>Complete</td>
+                        <td>Complete</td>
+                        <td>Complete</td>
+                        <td>Complete</td>
+                    </tr> -->
+                    <!-- Add more rows as needed -->
+                </table>
+            </div>
+    </section>
+    <section class="section" id="seen">
         <div class="container is-max-desktop">
             <!-- Paper video. -->
             <!-- <div class="columns is-centered has-text-centered">
