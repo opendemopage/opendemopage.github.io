@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Reconstructing High Quality Speech from Silent Videos">
+    <meta name="keywords" content="Let There Be Sound">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdaVC: Fast and High Quality Voice Conversion with Adaptive Feature Extractor</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item navbar-item-large" href="#Abstract">Abstract</a>
+            <a class="navbar-item navbar-item-large" href="#seen">Seen Speakers</a>
+            <a class="navbar-item navbar-item-large" href="#unseen">Unseen Speakers</a>
+            <a class="navbar-item navbar-item-large" href="#ablation">Ablation</a>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <!-- author information -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">AdaVC: Fast and High Quality Voice Conversion with
+                            Adaptive Feature Extractor</h1>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Ananymous Submission</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /author information -->
+
+
+    <section class="section" id="Abstract">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            The goal of this paper is to construct a fast and effective voice conversion framework that
+                            converts the speech of a
+                            The goal of this paper is to construct a fast and effective voice conversion framework that
+                            converts the speech of a source speaker to sound like a target speaker while preserving
+                            linguistic content.
+                            A key challenge is to extract disentangled representations of content from the source speech
+                            and voice style from the target.
+                            In this paper, we present AdaVC, a fast framework which generates speech that accurately
+                            resembles the target speaker with minimal loss of content.
+                            To achieve this, we propose an adaptive feature extractor that dynamically encodes content
+                            and speaker information by effectively utilizing self-supervised speech features.
+                            In addition, we leverage a flow enhancer that refines the acoustic representation to further
+                            improve speech quality.
+                            Subjective and objective evaluations demonstrate that AdaVC synthesizes speech 10 times
+                            faster than existing methods with minimal degradation of speech quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+        </div>
+    </section>
+    <section class="section" id="GRID">
+        <div class="container is-max-desktop">
+            <!-- Paper video. -->
+            <!-- <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Samples of GRID Dataset</h2>
+                    <div class="publication-video">
+                        <p class="transcription"><b>Sample 1</b></p>
+                        <video id="ablation_proposed_1" controls preload playsinline width="70%">
+                            <source src="./static/videos/grid_s7_prbi8n.mp4" type="video/mp4">
+                        </video>
+                        <p class="transcription"><b><i>Transcription</i>: "Place Red by I Eight Now."</b></p>
+                    </div>
+                </div>
+            </div> -->
+            <!--/ Paper video. -->
+        </div>
+    </section>
+    <section class="section" id="Lip2Wav">
+        <div class="container is-max-desktop">
+            <!-- Paper video -->
+            <!-- <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Samples of Lip2Wav Dataset</h2>
+                    <div class="publication-video">
+                        <p class="transcription"><b>Sample 1</b></p>
+                        <video id="ablation_proposed_1" controls preload playsinline width="90%">
+                            <source src="./static/videos/lip2wav_chem_144_0.mp4" type="video/mp4">
+                        </video>
+                        <p class="transcription">
+                            <b><i>Transcription</i>: “So we understand light as behaving like a wave
+                                like an ocean with a wavelength and a speed but also like a particle”</b>
+                        </p>
+                    </div>
+                </div>
+            </div> -->
+            <!-- /Paper video -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            The source code of the website is based on
+                            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
