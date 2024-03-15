@@ -169,3 +169,10 @@ body {
 .publication-title {
   padding-top: 2rem;
 }
+th,
+td {
+  border: 1px solid #ddd;
+  /* Existing table cell border styling */
+  text-align: left;
+  padding: 8px;
+}
