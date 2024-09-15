@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Reconstructing High Quality Speech from Silent Videos">
-    <meta name="keywords" content="Let There Be Sound">
+    <meta name="description" content="High Quality Voice Conversion with Adaptive Learning">
+    <meta name="keywords" content="AdaptVC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdaVC: Fast and High Quality Voice Conversion with Adaptive Feature Extractor</title>
+    <title>AdaptVC: High Quality Voice Conversion with Adaptive Learning</title>
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -25,23 +25,6 @@
     <script src="/static/js/index.js"></script>
 </head>
 
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-            <a class="navbar-item navbar-item-large" href="#Abstract">Abstract</a>
-            <a class="navbar-item navbar-item-large" href="#seen">Seen Speakers</a>
-            <a class="navbar-item navbar-item-large" href="#unseen">Unseen Speakers</a>
-            <a class="navbar-item navbar-item-large" href="#ablation">Ablation</a>
-        </div>
-    </div>
-</nav>
 
 <body>
     <!-- author information -->
@@ -55,22 +38,22 @@
                         </h1>
                         <div class="is-size-3 publication-authors">
                             <span class="author-block">
-                                <a>Jaehun Kim</a>
+                                <a>Jaehun Kim,</a>
                             </span>
                             <span class="author-block">
-                                <a>Ji-Hoon Kim</a>
+                                <a>Ji-Hoon Kim,</a>
                             </span>
                             <span class="author-block">
-                                <a>Yeunju Choi</a>
+                                <a>Yeunju Choi,</a>
                             </span>
                             <span class="author-block">
-                                <a>Tan Dat Nguyen</a>
+                                <a>Tan Dat Nguyen,</a>
                             </span>
                             <span class="author-block">
-                                <a>Seongkyu Moon</a>
+                                <a>Seongkyu Moon,</a>
                             </span>
                             <span class="author-block">
-                                <a>Joon Son Chung</a>
+                                <a>Joon Son Chung,</a>
                             </span>
                         </div>
                     </div>
@@ -89,17 +72,25 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            The goal of voice conversion is to transform the speech of a source speaker to sound like that of a reference speaker while preserving the original content.
-                            A key challenge is to extract disentangled linguistic content from the source and voice style from the reference.
-                            While existing approaches leverage various methods to isolate the two, a generalization still requires further
+                            The goal of voice conversion is to transform the speech of a source speaker to sound like
+                            that of a reference speaker while preserving the original content.
+                            A key challenge is to extract disentangled linguistic content from the source and voice
+                            style from the reference.
+                            While existing approaches leverage various methods to isolate the two, a generalization
+                            still requires further
                             attention, especially for robustness in zero-shot scenarios.
-                            In this paper, we achieve successful disentanglement of content and speaker features by tuning self-supervised speech
+                            In this paper, we achieve successful disentanglement of content and speaker features by
+                            tuning self-supervised speech
                             features with adapters.
-                            The adapters are trained to dynamically encode nuanced features from rich self-supervised features, and the decoder
-                            fuses them to produce speech that accurately resembles the reference with minimal loss of content.
-                            Moreover, we leverage a conditional flow matching decoder with cross-attention speaker conditioning to further boost the
+                            The adapters are trained to dynamically encode nuanced features from rich self-supervised
+                            features, and the decoder
+                            fuses them to produce speech that accurately resembles the reference with minimal loss of
+                            content.
+                            Moreover, we leverage a conditional flow matching decoder with cross-attention speaker
+                            conditioning to further boost the
                             synthesis quality and efficiency.
-                            Subjective and objective evaluations in a zero-shot scenario demonstrate that the proposed method outperforms existing
+                            Subjective and objective evaluations in a zero-shot scenario demonstrate that the proposed
+                            method outperforms existing
                             models in speech quality and similarity to the reference speech.
                         </p>
                     </div>
@@ -429,52 +420,206 @@
                             <th>AdaptVC w/ SALN conditioning</th>
                             <th>AdaptVC w/ mean + add conditioning</th>
                         </tr>
+
                         <tr>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/gt/063_src.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/gt/063_ref.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/gt_recon/063_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/proposed-5/063_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/ablation-afe/063_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/ablation-vq/063_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/ablation-saln/063_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
+                                    <source src="./static/audios/ablation-add/063_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/071_src.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/071_ref.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt_recon/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/proposed-5/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-afe/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-vq/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-saln/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-add/071_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/083_src.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/083_ref.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt_recon/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/proposed-5/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-afe/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-vq/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-saln/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-add/083_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/107_src.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt/107_ref.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/gt_recon/107_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/proposed-5/107_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-afe/107_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-vq/107_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-saln/107_pred.wav" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls>
+                                    <source src="./static/audios/ablation-add/107_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
