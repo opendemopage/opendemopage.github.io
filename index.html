@@ -50,11 +50,42 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">AdaVC: Fast and High Quality Voice Conversion with
-                            Adaptive Feature Extractor</h1>
+                        <h1 class="title is-1 publication-title">
+                            AdaptVC: High Quality Voice Conversion with Adaptive Learning
+                        </h1>
                         <div class="is-size-3 publication-authors">
                             <span class="author-block">
-                                <a>Ananymous Submission</a>
+                                <a>Jaehun Kim</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Ji-Hoon Kim</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Yeunju Choi</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Tan Dat Nguyen</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Seongkyu Moon</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Joon Son Chung</a>
+                            </span>
+                        </div>
+                        <div class="is-size-3 publication-authors">
+                            <span class="author-block">
+                                <a>Jaehun Kim</a>
                             </span>
                         </div>
                     </div>
@@ -73,19 +104,18 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            The goal of this paper is to construct a fast and effective voice conversion framework that
-                            converts the speech of a source speaker to sound like a target speaker while preserving
-                            linguistic content.
-                            A key challenge is to extract disentangled representations of content from the source speech
-                            and voice style from the target.
-                            In this paper, we present AdaVC, a fast framework which generates speech that accurately
-                            resembles the target speaker with minimal loss of content.
-                            To achieve this, we propose an adaptive feature extractor that dynamically encodes content
-                            and speaker information by effectively utilizing self-supervised speech features.
-                            In addition, we leverage a flow enhancer that refines the acoustic representation to further
-                            improve speech quality.
-                            Subjective and objective evaluations demonstrate that AdaVC synthesizes speech 10 times
-                            faster than existing methods with minimal degradation of speech quality.
+                            The goal of voice conversion is to transform the speech of a source speaker to sound like that of a reference speaker while preserving the original content.
+                            A key challenge is to extract disentangled linguistic content from the source and voice style from the reference.
+                            While existing approaches leverage various methods to isolate the two, a generalization still requires further
+                            attention, especially for robustness in zero-shot scenarios.
+                            In this paper, we achieve successful disentanglement of content and speaker features by tuning self-supervised speech
+                            features with adapters.
+                            The adapters are trained to dynamically encode nuanced features from rich self-supervised features, and the decoder
+                            fuses them to produce speech that accurately resembles the reference with minimal loss of content.
+                            Moreover, we leverage a conditional flow matching decoder with cross-attention speaker conditioning to further boost the
+                            synthesis quality and efficiency.
+                            Subjective and objective evaluations in a zero-shot scenario demonstrate that the proposed method outperforms existing
+                            models in speech quality and similarity to the reference speech.
                         </p>
                     </div>
                 </div>
@@ -94,221 +124,7 @@
 
         </div>
     </section>
-    <section class="section" id="seen">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-                <h2 class="title is-3">Conversion Samples for Seen Speakers</h2>
-            </div>
-            <div class="container is-centered has has-text-centered">
-                <div class="table-container">
-                    <table>
-                        <tr>
-                            <th>Source</th>
-                            <th>Target</th>
-                            <th>kNN-VC (single)</th>
-                            <th>kNN-VC (30s)</th>
-                            <th>DDDM-VC (6)</th>
-                            <th>DDDM-VC (30)</th>
-                            <th><b>AdaVC</b></th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_knn_single.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_knn_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_dddm_6.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_dddm_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0159_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_knn_single.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_knn_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_dddm_6.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_dddm_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_knn_single.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_knn_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_dddm_6.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_dddm_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0297_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_knn_single.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_knn_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_dddm_6.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_dddm_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0344_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <!-- <tr>
-                            <td>Element 2</td>
-                            <td>This is a description of the second element.</td>
-                            <td>In Progress</td>
-                            <td>Complete</td>
-                            <td>Complete</td>
-                            <td>Complete</td>
-                            <td>Complete</td>
-                        </tr> -->
-                        <!-- Add more rows as needed -->
-                    </table>
-                </div>
-                <div class="content has-text-justified">
-                    <p>
-                        The table shows the conversion samples for seen speakers. The first column shows the source
-                        speaker, the second column shows the target speaker, and the rest of the columns show the
-                        converted audio samples using different methods. The last column shows the converted audio samples
-                        using the proposed method.
-                    </p>
-                </div>
-            </div>
-    </section>
+
     <section class="section" id="unseen">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
@@ -320,136 +136,85 @@
                         <tr>
                             <th>Source</th>
                             <th>Target</th>
-                            <th>kNN-VC (single)</th>
-                            <th>DDDM-VC (6)</th>
+                            <th>GT (vocoded)</th>
+                            <th>kNN-VC</th>
+                            <th>DiffVC (30)</th>
+                            <th>DiffVC (10)</th>
                             <th>DDDM-VC (30)</th>
-                            <th><b>AdaVC</b></th>
+                            <th>DDDM-VC (10)</th>
+                            <th><b>AdaptVC (10)</b></th>
+                            <th><b>AdaptVC (5)</b></th>
+                            <th><b>AdaptVC (1)</b></th>
                         </tr>
                         <tr>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_src.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_src.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_ref.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_ref.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_knn_single.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_pred.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_dddm_6.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_knn.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_dddm_30.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_diffvc-30.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0000_src.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_diffvc-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0000_ref.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-30.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0000_knn_single.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0000_dddm_6.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_proposed-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0000_dddm_30.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_proposed-5.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0000_proposed.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_proposed-1.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_knn_single.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_dddm_6.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_dddm_30.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0002_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
+                        </tr>                        
                     </table>
-                </div>
-                <div class="content has-text-justified">
-                    <p>
-                        The table shows the conversion samples for unseen speakers. The first column shows the source
-                        speaker, the second column shows the target speaker, and the rest of the columns show the
-                        converted audio samples using different methods. The last column shows the converted audio samples
-                        using the proposed method.
-                    </p>
-                    <p>
-                        Note that kNN-VC with 30 seconds of speech data is not applicable for unseen speakers.
-                    </p>
                 </div>
             </div>
     </section>
@@ -465,143 +230,64 @@
                         <tr>
                             <th>Source</th>
                             <th>Target</th>
-                            <th><b>AdaVC</b></th>
-                            <th>AdaVC w/o AFE</th>
-                            <th>AdaVC w/o cross-attention</th>
-                            <th>AdaVC w/o modified flow</th>
+                            <th>GT (vocoded)</th>
+                            <th><b>AdaptVC</b></th>
+                            <th>AdaptVC w/o adapters</th>
+                            <th>AdaptVC w/o Vector Quantization</th>
+                            <th>AdaptVC w/ SALN conditioning</th>
+                            <th>AdaptVC w/ mean + add conditioning</th>
                         </tr>
                         <tr>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_src.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_ref.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_proposed.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_afe.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_spkr.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0003_flow.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_src.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0076_ref.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                             <td>
                                 <audio controls>
-                                    <source src="./static/audios/0076_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_afe.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_spkr.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0076_flow.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_src.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_ref.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_proposed.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_afe.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_spkr.wav" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls>
-                                    <source src="./static/audios/0329_flow.wav" type="audio/mpeg">
+                                    <source src="./static/audios/040_dddm-10.wav" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </td>
                         </tr>
                     </table>
-                </div>
-                <div class="content has-text-justified">
-                    <p>
-                        The table shows the ablation study for the proposed method. The first column shows the source
-                        speaker, the second column shows the target speaker, and the rest of the columns show the
-                        converted audio samples using different ablation methods. The last column shows the converted audio
-                        samples using the proposed method.
-                    </p>
-                    <p>
-                        The ablation methods are as follows:
-                        <ul>
-                            <li>AdaVC w/o AFE: The proposed method without the adaptive feature
-                                extractor.</li>
-                            <li>AdaVC w/o cross-attention: The proposed method without the cross attention speaker conditioning.</li>
-                            <li>AdaVC w/o modified flow: The proposed method with conventional generative flow.</li>
-                        </ul>
-                    </p>
                 </div>
             </div>
         </div>
